@@ -1,13 +1,6 @@
-import React from "react";
-import moment from "moment";
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip
-} from "recharts";
+import React from 'react';
+import moment from 'moment';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
 const Chart = ({ sparklineData }) => {
   const formattedData = sparklineData
@@ -15,11 +8,11 @@ const Chart = ({ sparklineData }) => {
       if (idx % 6 === 0) {
         const timeToSubtract = 168 - idx;
         const date = moment()
-          .subtract(timeToSubtract, "hours")
-          .format("ddd h:mma");
+          .subtract(timeToSubtract, 'hours')
+          .format('ddd h:mma');
         return { value: price, date };
       } else if (idx === sparklineData.length - 1) {
-        const date = moment().format("ddd h:mma");
+        const date = moment().format('ddd h:mma');
         return { value: price, date };
       }
       return null;
